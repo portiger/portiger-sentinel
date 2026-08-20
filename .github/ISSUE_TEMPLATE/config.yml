@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security vulnerability
+    url: https://github.com/portiger/portiger-sentinel/blob/main/SECURITY.md
+    about: Do not open a public issue. Write to security@portiger.com.
+  - name: Documentation
+    url: https://sentinel.portiger.com/docs.html
+    about: Install, air-gapped clusters, private registries and upgrades.
+  - name: Licensing and billing
+    url: mailto:support@portiger.com
+    about: Keys, renewals, invoices and quota questions.

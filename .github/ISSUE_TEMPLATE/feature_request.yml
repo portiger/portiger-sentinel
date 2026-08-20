@@ -1,0 +1,33 @@
+name: Feature request
+description: Something Sentinel should do and does not.
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What are you trying to do?
+      description: The situation, not the solution. What does today's version make hard?
+    validations:
+      required: true
+
+  - type: textarea
+    id: today
+    attributes:
+      label: How do you handle it now?
+      description: A workaround tells us how much the gap costs you.
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What would you have it do?
+
+  - type: dropdown
+    id: blocking
+    attributes:
+      label: Is this blocking you?
+      options:
+        - "No — it would be an improvement"
+        - "Yes — we have a workaround but it is expensive"
+        - "Yes — we cannot adopt Sentinel without it"
+    validations:
+      required: true

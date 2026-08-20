@@ -1,0 +1,95 @@
+name: Bug report
+description: Something does not behave the way the documentation says it does.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Before you paste anything:** Sentinel is built so that node names,
+        addresses and endpoints never leave your cluster. Please hold to the
+        same line here — redact hostnames, internal registries and anything
+        that would map your estate. We can almost always diagnose without them,
+        and if we cannot we will ask for something specific.
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What should have happened
+      description: Quote the documentation or the page that says so, if there is one.
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: What happened instead
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: How to reproduce it
+      placeholder: |
+        1. helm install … --set …
+        2. kubectl apply -f …
+        3. the pod is admitted, and it should have been denied
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Chart and image version
+      placeholder: "chart 1.0.0, image 1.0.0"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: edition
+    attributes:
+      label: Edition
+      options: ["Community", "Enterprise", "Trial"]
+    validations:
+      required: true
+
+  - type: input
+    id: kubernetes
+    attributes:
+      label: Kubernetes distribution and version
+      placeholder: "k3s v1.31.4, or EKS 1.30, or kubeadm 1.29"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: arch
+    attributes:
+      label: Node architecture
+      options: ["linux/amd64", "linux/arm64", "mixed"]
+    validations:
+      required: true
+
+  - type: dropdown
+    id: airgapped
+    attributes:
+      label: Does this cluster have a route to the internet?
+      options: ["Yes", "No — air-gapped", "Egress through a proxy or allow-list"]
+    validations:
+      required: true
+
+  - type: textarea
+    id: values
+    attributes:
+      label: Relevant chart values
+      description: Redacted. Never paste a DSN, a licence key or a credential.
+      render: yaml
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Operator logs around the failure
+      description: |
+        `kubectl -n portiger-sentinel logs deploy/sentinel --tail=100`
+        Raise the level first if it helps: the telemetry page can put a single
+        component at debug without flooding the rest.
+      render: shell
