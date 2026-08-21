@@ -7,7 +7,7 @@ signatures, decides what admission accepts, and keeps the record an auditor
 asks for. All of it runs inside your cluster. It opens no connection to
 Portiger — not at install, not at activation, not at renewal.
 
-[sentinel.portiger.com](https://sentinel.portiger.com) · [Documentation](docs/) · [Report a bug](../../issues/new/choose)
+[sentinel.portiger.com](https://sentinel.portiger.com) · [Documentation](docs/) · [Every setting](docs/configuration.md) · [Report a bug](../../issues/new/choose)
 
 > **This repository is documentation and the issue tracker.** The product
 > source is not here. If something is broken, or the docs are wrong, open an

@@ -2,6 +2,7 @@
 
 | | |
 |---|---|
+| [configuration.md](configuration.md) | **Every setting** — chart values, precedence, environment variables, and what is still console-only |
 | [install.md](install.md) | Requirements, Helm install, database, licence key |
 | [air-gapped.md](air-gapped.md) | Running with no route to the internet |
 | [registries.md](registries.md) | Private registries and plain-HTTP registries |
